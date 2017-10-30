@@ -8,11 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.json.JSONObject;
-
 import db.DBConnection;
 import db.DBConnectionFactory;
-import db.mysql.MySQLConnection;
 import entity.Item;
 
 // Recommendation based on geo distance and similar categories.
