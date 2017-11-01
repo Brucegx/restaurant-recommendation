@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="description" content="Item Recommendation">
   <meta name="author" content="Xi Guo">
-  <title>Item Recommendation Final</title>
+  <title>Restaurant Recommendation Final</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
   <header class="top-header">
@@ -23,7 +24,7 @@
   <div class="container">
     <header>
       <p>
-        <span>Item</span>
+        <span>Restaurant</span>
         <br /> Recommendation
       </p>
     </header>
@@ -73,27 +74,23 @@
     <ul>
       <li>
         <p><i class="fa fa-map-o fa-2x"></i></p>
-        <p>LaiOffer office, CA</p>
+        <p>TechDirect LLC, NY</p>
       </li>
       <li>
         <p><i class="fa fa-envelope-o fa-2x"></i></p>
-        <p>info@laioffer.com</p>
+        <p>guoxi.bruce@gmail.com</p>
       </li>
       <li>
         <p><i class="fa fa-phone fa-2x"></i></p>
-        <p>+1 800 123 456</p>
+        <p>+1 888 606 8088</p>
       </li>
     </ul>
-    <form id = "test">
-    	<label><b>Username</b></label>
-	    <input type="text" placeholder="Enter Username" name="uname" required>
-	    <label><b>Password</b></label>
-	    <input type="password" placeholder="Enter Password" name="psw" required>
-	    <button type = "submit" id = "login">try it</button>
-    </form>
   </footer>
   
   <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+  <script type="text/javascript">
+    	var name = ${sessionScipe.userId};
+	</script>
   <script src="scripts/main.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@ import java.text.ParseException;
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.IndexOptions;
 
@@ -13,9 +14,9 @@ import com.mongodb.client.model.IndexOptions;
 public class MongoDBTableCreation {
   // Run as Java application to create MongoDB tables with index.
   public static void main(String[] args) throws ParseException {
-    MongoClient mongoClient = new MongoClient();
+    MongoClient mongoClient = new MongoClient(MongoDBUtil.uri);
     MongoDatabase db = mongoClient.getDatabase(MongoDBUtil.DB_NAME);
-
+   
     // Step 1: remove old collections.
     db.getCollection("users").drop();
     db.getCollection("items").drop();

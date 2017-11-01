@@ -67,4 +67,8 @@ public interface DBConnection {
    * @param item
    */
   public void saveItem(Item item);
+  
+  public String getPsw(String userId);
+  
+  public void setUser(String userId, String psw);
 }

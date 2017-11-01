@@ -208,5 +208,17 @@ public class MySQLConnection implements DBConnection {
 		}
 		return items;
 	}
+
+	@Override
+	public String getPsw(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setUser(String userId, String psw) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

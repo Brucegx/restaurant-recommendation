@@ -7,6 +7,7 @@ import java.util.Set;
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.UpdateOptions;
@@ -33,16 +34,31 @@ public class MongoDBConnection implements DBConnection {
 	private MongoDatabase db;
 
 	private MongoDBConnection() {
-		// Connects to local mongodb server.
-		mongoClient = new MongoClient();
+		mongoClient = new MongoClient(MongoDBUtil.uri);
 		db = mongoClient.getDatabase(MongoDBUtil.DB_NAME);
 	}
-
+	
 	@Override
 	public void close() {
 		if (mongoClient != null) {
 			mongoClient.close();
 		}
+	}
+	@Override
+	public String getPsw(String userId) {
+		FindIterable<Document> iterable = db.getCollection("users").find(eq("user_id", userId));
+		if(iterable.first() != null && iterable.first().containsKey("psw")) {
+			String psw = iterable.first().getString("psw");
+			return psw;
+		}
+		return null;
+	}
+	
+	@Override
+	public void setUser(String userId, String psw) {
+		db.getCollection("users").insertOne(new Document("user_id", userId));
+		db.getCollection("users").updateOne(new Document("user_id", userId), 
+				new Document("$set", new Document("psw", psw)));
 	}
 
 	@Override

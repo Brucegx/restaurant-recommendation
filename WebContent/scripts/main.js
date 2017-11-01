@@ -12,13 +12,13 @@
      */
     function init() {
         // Register event listeners
+    	console.log(name);
         $('nearby-btn').addEventListener('click', loadNearbyItems);
         $('fav-btn').addEventListener('click', loadFavoriteItems);
         $('recommend-btn').addEventListener('click', loadRecommendedItems);
-        $('login').addEventListener('click', loadLoginInfo);
-
+        
         var welcomeMsg = $('welcome-msg');
-        welcomeMsg.innerHTML = 'Welcome, ' + user_fullname;
+        //welcomeMsg.innerHTML = 'Welcome, ' + user_fullname;
         initGeoLocation();
     }
     
@@ -178,14 +178,7 @@
     // -------------------------------------
     // AJAX call server-side APIs
     // -------------------------------------
-//    API 0
-    function loadLoginInfo() {
-    	console.log("there is login part" + this);
-    	var testcase = $('test');
-    	var url = './login';
-        var params = 'user_id=' + user_id + '&lat=' + lat + '&lon=' + lng;
-        var req = JSON.stringify({});
-    }
+    // API 0
     /**
      * API #1 Load the nearby items API end point: [GET]
      * /Dashi/search?user_id=1111&lat=37.38&lon=-122.08
@@ -441,3 +434,18 @@
     init();
 
 })();
+
+function loadLoginInfo( form ) {
+	console.log("there is login part" + this);
+	var data = $(form).serializeArray().reduce(function(m,o) {
+		m[o.name] = o.value;
+		return m;
+	}, {});
+	console.log(data);
+	if (data.uname == 'guoxi') {
+		console.log('bingo');
+//		$('#provement').display('none');
+		return true;
+	}
+	return false;
+}
