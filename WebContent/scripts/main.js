@@ -3,22 +3,23 @@
     /**
      * Variables
      */
-    var user_id = '1111';
+	var userId = document.cookie.split("=")[1];
+    var user_id = userId;
     var user_fullname = 'John';
     var lng = -122.08;
     var lat = 37.38;
+    //console.log($(document).cookie);
     /**
      * Initialize
      */
     function init() {
         // Register event listeners
-    	console.log(name);
         $('nearby-btn').addEventListener('click', loadNearbyItems);
         $('fav-btn').addEventListener('click', loadFavoriteItems);
         $('recommend-btn').addEventListener('click', loadRecommendedItems);
         
         var welcomeMsg = $('welcome-msg');
-        //welcomeMsg.innerHTML = 'Welcome, ' + user_fullname;
+        welcomeMsg.innerHTML = 'Welcome, ' + userId;
         initGeoLocation();
     }
     
@@ -435,17 +436,3 @@
 
 })();
 
-function loadLoginInfo( form ) {
-	console.log("there is login part" + this);
-	var data = $(form).serializeArray().reduce(function(m,o) {
-		m[o.name] = o.value;
-		return m;
-	}, {});
-	console.log(data);
-	if (data.uname == 'guoxi') {
-		console.log('bingo');
-//		$('#provement').display('none');
-		return true;
-	}
-	return false;
-}

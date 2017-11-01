@@ -60,7 +60,6 @@ public class SearchItem extends HttpServlet {
 		}
 		JSONArray array = new JSONArray(list);
 		RpcHelper.writeJsonArray(response, array);
-
 	}
 
 
