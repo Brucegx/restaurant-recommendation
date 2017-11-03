@@ -3,7 +3,7 @@
     /**
      * Variables
      */
-	var userId = document.cookie.split("=")[1];
+	var userId = document.cookie.split(/=|;/)[3];
     var user_id = userId;
     var user_fullname = 'John';
     var lng = -122.08;

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Find Best Restaurant</title>
+<link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+<div class="container">
+   <div class="row">
+   	<div class="col-md-12">
+           <div class="pr-wrap">
+               <div class="pass-reset">
+                   <label>
+                       Enter the email you signed up with</label>
+                   <input type="email" placeholder="Email" />
+                   <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
+               </div>
+           </div>
+           <div class="wrap">
+               <p class="form-title">
+                   Login / Register</p>
+               <form action='./login' class="login" method = 'post'>
+	              <input type="text" placeholder="Username" name='user_id' required/>
+	              <input type="password" placeholder="Password" name='psw' required/>
+	              <input class='inner' action='./login'  id="login" type='submit' name='method' value='Login' ></input>
+	              <input class='inner' action='./login'  id='register'type='submit' name='method' value='Register'></input>
+	              <!-- <input type="submit" class="btn btn-success btn-sm" /> -->
+	              <div class="remember-forgot">
+	                  <div class="row">
+	                      <div class="col-md-6">
+	                          <div class="checkbox">
+	                              <label>
+	                                  <input type="checkbox" />
+	                                  Remember Me
+	                              </label>
+	                          </div>
+	                      </div>
+	                      <div class="col-md-6 forgot-pass-content">
+	                          <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+	                      </div>
+	                  </div>
+	              </div>
+               </form>
+           </div>
+       </div>
+   </div>
+</div>
+<script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+<script src="scripts/login.js"></script>
+</body>
+</html>
