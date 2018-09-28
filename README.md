@@ -6,7 +6,7 @@ At first, there is a login page. If you have account already, it will navigate t
 In main page, it will get your localtion at first. If it can't get your geolocation, it will tried to find location through IP. Then it will render a list of restaurants nearby. Favorite stores the list what you like. Recommendation will helps you find best choice based on distance and food categories you choose before. 
 
 ##### Demo
-![alt-text](http://recordit.co/FjLucreU6H)
+![alt-text](Restaurant Demo.gif)
 ****
 #### Back End
 Since this is a recommendation system which will have heavy calculation I choose Java as back end and used Tomcat v8.0 as container. 
